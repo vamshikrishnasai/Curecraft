@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page | CURECRAFT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            background-image: url('https://cdn.discordapp.com/attachments/1143051446489731154/1195279836403482634/luxa.org-opacity-changed-Screenshot_2024-01-11_231442.png?ex=65eac918&is=65d85418&hm=5a633130f957b7013866a590964b30fdcb41e738b73f21a7d8b71c7aecfb1bde&');
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            background-color: #ffffff;
+            box-sizing: border-box;
+        }
+        .logo-title {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 10px;
+        }
+        .header-title {
+            display: block;
+        }
+        h1 {
+            margin: 0;
+            font-size: 3rem;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #00a6ff;
+        }
+        li {
+            float: left;
+        }
+        li a {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 1.4rem;
+            padding: 14px 16px;
+            transition: background-color 0.3s;
+        }
+        li a:hover {
+            background-color: #0078a0;
+        }
+        .login-btn,
+.signup-btn {
+    background-color: #00a6ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 1rem;
+    margin-right: 10px;
+    text-decoration: none; /* Add this line to remove underlines */
+}
+.login-btn:hover,
+.signup-btn:hover {
+    background-color: #007c9a;
+}
+        .home-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .sub-menu {
+            display: none;
+            position: absolute;
+            background-color: #00a6ff;
+            z-index: 1;
+        }
+        li:hover .sub-menu {
+            display: block;
+        }
+        .sub-menu li {
+            float: none;
+            display: block;
+            text-align: left;
+        }
+        .sub-menu li a {
+            padding: 12px 16px;
+            color: white;
+        }
+        .sub-menu li a:hover {
+            background-color: #0078a0;
+        }
+        .body-title{
+            text-align: center;
+        }
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+    color: #fff;
+    background: #1cc7d0;
+}
+
+.card-container {
+    display: flex; /* Use flexbox to align cards horizontally */
+    justify-content: space-around; /* Adjust this as needed for spacing between cards */
+}
+
+.wrapper {
+    height: 400px;
+    width: 250px; /* Adjust the width of the cards as needed */
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    margin: 20px;
+}
+
+.wrapper .card {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background: #fff;
+    border-radius: 10px;
+    transform: translateY(0deg);
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.wrapper:hover>.front-face {
+    transform: rotateY(-180deg);
+}
+
+.wrapper .card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.wrapper .back-face {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    transform: rotateY(180deg);
+}
+
+.wrapper:hover>.back-face {
+    transform: rotateY(0deg);
+}
+
+.wrapper .back-face img {
+    height: 150px;
+    width: 150px;
+    padding: 5px;
+    border-radius: 50%;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+}
+
+.wrapper .back-face .info {
+    text-align: center;
+}
+
+.back-face .info .title {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.back-face ul {
+    display: flex;
+}
+
+.back-face ul a {
+    display: block;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    margin: 0 5px;
+    line-height: 38px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: linear-gradient(375deg, #1cc7d0, #2ede98);
+    transition: all 0.5s ease;
+}
+
+.back-face ul a:hover {
+    color: #1cc7d0;
+    border-color: #1cc7d0;
+    background: linear-gradient(375deg, transparent, transparent);
+}
+.card-title{
+    text-align: center;
+}
+.email-header{
+    text-align: left;
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+.emails-body{
+    text-align: left;
+    margin-left: 1%;
+    margin-bottom: 1%;
+}
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .footer-left, .footer-right {
+            flex: 1;
+            text-align: left;
+        }
+        footer h3 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        .social-icon {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="logo-title">
+            <img src='https://media.discordapp.net/attachments/1143051446489731154/1195279835736580136/WhatsApp_Image_2024-01-11_at_23.05.11_9c267feb-removebg-preview.png?ex=65b36a18&is=65a0f518&hm=8b6a8501054f599719b4216d004c5cdb73d5da92a91c0a7e733690411029df4b&=&format=webp&quality=lossless&width=666&height=558' alt="Curecraft Logo" class="logo">
+            <div class="header-title">
+                <h1>CURECRAFT</h1>
+            </div>
+        </div>
+        <nav>
+            <a href="login" class="login-btn">Login</a>
+            <a href="signup" class="signup-btn">Signup</a>
+        </nav>
+    </header>
+    <ul>
+        <li>
+            <nav class="hel">
+            <a href="/homepage">
+                <img src='https://media.discordapp.net/attachments/1143051446489731154/1195279836017602590/home.png?ex=65b36a18&is=65a0f518&hm=ef33a5ad73106df33c8d4c9f8ca61b8c5fae9830119dcf63f6ab85f7345aaf39&=&format=webp&quality=lossless&width=558&height=558' alt="Home Icon" class="home-icon">
+                Home
+            </a>
+        </li>
+        <li>
+            <a class="100" href="#">
+                <img src='https://cdn-icons-png.flaticon.com/512/2875/2875035.png' alt="Home Icon" class="home-icon">
+                 Doctor Consultancy 
+                </a>
+            <ul class="sub-menu">
+                <li><a href="#">Virtual Meet</a></li>
+                <li><a href="/bookanappointment">Book an Appointment</a></li>
+            </ul>
+        </li>
+        <li><a href="/userprofile"> User Profile </a></li>
+        <li><a href="#"> Fitness </a>
+        <ul class="sub-menu">
+            <li><a href="">Walking</a></li>
+            <li><a href="">Exercise</a></li>
+            <li><a href="index">Curecraft AI</a></li>
+            <li><a href="waterdrop">Drinking Water</a></li>
+            <li><a href="/cycle">Cycling</a></li>
+            <li><a href="bodymassindex">BMI(Body Mass Index)</a></li>
+        </ul>
+    </li>
+        <li><a href="about"> 
+            <img src='https://cdn-icons-png.flaticon.com/512/52/52349.png' alt="Home Icon" class="home-icon">
+            About 
+        </a></li>
+        <li><a href="/contactus">
+            <script src="https://cdn.lordicon.com/lordicon.js"></script>
+<lord-icon
+    src="https://cdn.lordicon.com/ojnjgkun.json"
+    trigger="hover"
+    style="width:27px;height:27px"
+    alt="Home Icon" class="home-icon">
+</lord-icon>         
+            Contact Us </a></li>
+    </nav>
+    </ul>  
+    <br> 
+    <div class="body-title">
+        <h1>Welcome to CURECRAFT</h1>
+    </div>
+    <br>
+    <br>
+    <div class="card-container">
+        <div class="wrapper">
+            <div class="card front-face">
+                <img src="https://lh3.googleusercontent.com/fife/AGXqzDnqsjWqssu1y6TyShSdFURuVpG2aEzkEudHRWiBmHAA6JAs5Q9dsW6gKmsRbDKc06vfwGr4HqyAaXA4KRwHKfC4yrJYgS6bwp1gB_4IIF1ziS2OTIMNURiR1s4bgXwKRyb-WhmWWUpiaHDwqYjK9koWMfuPTVhUhPI8Kyf-swe6kUKX777T6q5or7E4qL2KorvRKHUzQVZN4hRESqKS1STH5MARzLwyl2NyQMbF-UoRIY0cvHLS5GsRW9NC293tRE2pxei0RH5CvAg9sTUsUnhNtnmeSH4HGekvOljdDTtQQIGA8qVNeB6PDKF9rINGFfT08QUmf99klaFW25K3-R3x038ukjGKYBOmepMnwu8nibpu5h3pWB915xgcma8y2OHDqp91P8r8jnLNOyhFFnN2fv-dKLHiFlRIBag5Ik6dh3N5CcLRDIXNZHQ8wqwJu6UTCfcYiuZrq_qm5a_fgbwrmar7-pdb9Dldg_2uEoClQ_Js_vFoS_VQJxNgozqjmiZVxzPs9C790Utw-xvVPcDC7mH9MY0s5TNEm-huGIskYWLO2Yot9hqbkcmwZtZ_QFnyKClnLt5JLeONpHGXwq6yXJJDxGKRu_DQiIFdBj9WrDd4TzT_Hy1ZLkM2ZfprOlz7UdBosa7n5n7WHtF5C6SMEfUQgIXxkpeGfqhVy6_fEdQO3_C9i8rrrrIj3D6i-684O4Ev3Tcl5NKekdjaGV2vOagXu7_3j2s_D9wy5OMzLz02ZoZTWG0v3pbA04fcsKVNUa2K4bRFO24T6aTIjL0StMMSXreG_Jjemi9D6tQ3VRL_AguRjqyHYT-jpaPVyjn37q2ESq867v_ZsHqacmSCQyAFySI3nGXRmAqmNx9V_-GwL6X55im5FErkY0_ACrR7iUVKshXGObKWvJECHrANgx4oxOEk8QRbv3irYzbC3TZusJOGHMMuCwhBdEdjBMm9hQ7TcxPfTBO7akIZ2TzC9SNt4WSg2sx3Tu43VIRGbLFItIFnYw15RHA1bb5dKpKKt8kYSWELbZfIdYiic73bBJdapvplSGBkdI4Qh-jnhIPSkhrY7T59_J0wbDWqZr__1NPs9XLX0zH_Aa9SEZl1EGw7PMcAUF65oicXI7T30R3I2XlkDcRn3qwbGN7cGlArZcOz46emuCKX0kg9uKSr5fbKyiyAhftVtViLkIAgbPbCMZ1UNIiwxaGt2xOnX0rg9DfItsaPIqUSezx17EUYBZfguLmfNwsEFCs4_nhPyHFB0w9-x3QLDgnUsSrwOEpTWNTr5hmKhaDd61SN-pvgSvUV1Tv-AK7kColLW2Zl6PERRUFn1hI7jmHTYZ7kS1AP_pUN33V6GObNR8f-fpnfEln_0jcMaX3-Qhrl1JqQqVTDYuWsbo82szaZ0rZIQT2uOc1ZP9j42hHmi8UfPasz1UXYjSe-yWKaGTM0SBZc9IblFdIpjYRRg3mLRCO8O4gRyzPAxMFOyaNvqdc-FGNiIXZ94_FPOu2QTFtik-IufUSVmSsHJJ_RK4UkrV12fOik23SFylK9lJEkXAUNQu99o9NHbIuadZqk69frICeTinzybxXCtKrN_bgXKUT476r4UnqZ8NAiJWDhqwvoi0mDoi_lsuSPl9HNomUfne3djGri3fjWxEoZGBtluwm-8LxdDzkgqYvFO8FzIb5LSOQ29EVZ0PUE6Bba1J6S-_U2wBHzHkICMFJQPcovmmapsOG5GI_r8AZtUfDM8ajrGL_t2mNV3w78osmofyWH-pSeU1lX3RP0_YhCygcPnzOeeHcq-F6G0Dw-FL1RqRYqBnA=w1919-h859">
+            </div>
+            <div class="card back-face">
+                <img src="https://lh3.googleusercontent.com/fife/AGXqzDnqsjWqssu1y6TyShSdFURuVpG2aEzkEudHRWiBmHAA6JAs5Q9dsW6gKmsRbDKc06vfwGr4HqyAaXA4KRwHKfC4yrJYgS6bwp1gB_4IIF1ziS2OTIMNURiR1s4bgXwKRyb-WhmWWUpiaHDwqYjK9koWMfuPTVhUhPI8Kyf-swe6kUKX777T6q5or7E4qL2KorvRKHUzQVZN4hRESqKS1STH5MARzLwyl2NyQMbF-UoRIY0cvHLS5GsRW9NC293tRE2pxei0RH5CvAg9sTUsUnhNtnmeSH4HGekvOljdDTtQQIGA8qVNeB6PDKF9rINGFfT08QUmf99klaFW25K3-R3x038ukjGKYBOmepMnwu8nibpu5h3pWB915xgcma8y2OHDqp91P8r8jnLNOyhFFnN2fv-dKLHiFlRIBag5Ik6dh3N5CcLRDIXNZHQ8wqwJu6UTCfcYiuZrq_qm5a_fgbwrmar7-pdb9Dldg_2uEoClQ_Js_vFoS_VQJxNgozqjmiZVxzPs9C790Utw-xvVPcDC7mH9MY0s5TNEm-huGIskYWLO2Yot9hqbkcmwZtZ_QFnyKClnLt5JLeONpHGXwq6yXJJDxGKRu_DQiIFdBj9WrDd4TzT_Hy1ZLkM2ZfprOlz7UdBosa7n5n7WHtF5C6SMEfUQgIXxkpeGfqhVy6_fEdQO3_C9i8rrrrIj3D6i-684O4Ev3Tcl5NKekdjaGV2vOagXu7_3j2s_D9wy5OMzLz02ZoZTWG0v3pbA04fcsKVNUa2K4bRFO24T6aTIjL0StMMSXreG_Jjemi9D6tQ3VRL_AguRjqyHYT-jpaPVyjn37q2ESq867v_ZsHqacmSCQyAFySI3nGXRmAqmNx9V_-GwL6X55im5FErkY0_ACrR7iUVKshXGObKWvJECHrANgx4oxOEk8QRbv3irYzbC3TZusJOGHMMuCwhBdEdjBMm9hQ7TcxPfTBO7akIZ2TzC9SNt4WSg2sx3Tu43VIRGbLFItIFnYw15RHA1bb5dKpKKt8kYSWELbZfIdYiic73bBJdapvplSGBkdI4Qh-jnhIPSkhrY7T59_J0wbDWqZr__1NPs9XLX0zH_Aa9SEZl1EGw7PMcAUF65oicXI7T30R3I2XlkDcRn3qwbGN7cGlArZcOz46emuCKX0kg9uKSr5fbKyiyAhftVtViLkIAgbPbCMZ1UNIiwxaGt2xOnX0rg9DfItsaPIqUSezx17EUYBZfguLmfNwsEFCs4_nhPyHFB0w9-x3QLDgnUsSrwOEpTWNTr5hmKhaDd61SN-pvgSvUV1Tv-AK7kColLW2Zl6PERRUFn1hI7jmHTYZ7kS1AP_pUN33V6GObNR8f-fpnfEln_0jcMaX3-Qhrl1JqQqVTDYuWsbo82szaZ0rZIQT2uOc1ZP9j42hHmi8UfPasz1UXYjSe-yWKaGTM0SBZc9IblFdIpjYRRg3mLRCO8O4gRyzPAxMFOyaNvqdc-FGNiIXZ94_FPOu2QTFtik-IufUSVmSsHJJ_RK4UkrV12fOik23SFylK9lJEkXAUNQu99o9NHbIuadZqk69frICeTinzybxXCtKrN_bgXKUT476r4UnqZ8NAiJWDhqwvoi0mDoi_lsuSPl9HNomUfne3djGri3fjWxEoZGBtluwm-8LxdDzkgqYvFO8FzIb5LSOQ29EVZ0PUE6Bba1J6S-_U2wBHzHkICMFJQPcovmmapsOG5GI_r8AZtUfDM8ajrGL_t2mNV3w78osmofyWH-pSeU1lX3RP0_YhCygcPnzOeeHcq-F6G0Dw-FL1RqRYqBnA=w1919-h859">
+                <div class="info">
+                    <div class="title">
+                        Vamshi Krishna
+                    </div>
+                    <p>
+                        Back-end developer and <br>Animator
+                    </p>
+                </div>
+                <ul>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/urstruly_vamshi_78/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="card front-face">
+                <img src="https://lh3.googleusercontent.com/fife/AGXqzDkLMnNxAFWjPgYpeXlMhf-nmqnWVz09JtRBCVZ2UZ0sa1vlMYlmWluYyl60IxGT8WwfvPCzi8GMX89l4whU09OU-VAg_fpIYDiKZLvZseoLQUuZKYApuzrP_9A9aWEP6Y_o8JzMJmZcdbh-6N99pgNnC8YOq6YjikKpHeiGDU0Iz44e6_-NF3z-cWlGXLfDYvyV5dCizLrLjRxItOv9LXifvJRC3pAtMYZQVUYMEK0WVE9o7oBYAKKavhBOlxKeJQ_BMrd2LeSALnmok0O3DihKKC382hhdZtfW9KJj9iKRRBqCPNwdArEf6wPfU1BxDNHesrrr2IE9qU-7jxXn_yMBAe34TfJuiKGEg5ZDm5mEkY0vuDYkDj75NlMYnp6YT0SoFJnmw5ztcbuq3_Lo1Rjrc0deO1dwzQAStMRv66HI7CgypfQxXf9WbxEiU8ME_KNaUrkDZGf2vOZBzmfJ_w9tUCxTtTkDp9qC4gHwJAG6wW1lCXi4zs6U631kJlciv1Ti5acyEiEuyLjFqtBsAGhzj5N5AbKPLPniEvmmUxhxjwMafxZiEm5sDcQdGs5y6Gu16iWkxIM5e3JmLnhO1FBLFYoA2LtW1v2c_qhyGUZkuufYGLWbNbClxlLQ9SkKDxXABa7uzuTkZwur6XsSHkGLk8b-z5ZNDcHHzisRtGV2THLk4NTiphKKEoTmpsYYTjEkAr_0Aqq5WnnvNTdiibLQ5b8kJlDHcp_2LAP6G8Y-N_5bBOEMjexk9XzyjsYZ5BDvaxHebD16Uhamb1_pobaIQSy0PuDJ2owebszxn9wn-VENJSW0S2bmoguRyAehVZzrZHBzLg5wZ9qfucTPmhcQATpbR9g2ARg6ZXVj04oLD-7GbDmF-7UshgC24dU0ZnRse3qQuRpOH7x4Z-q74ZJJpuEut9a2WNMPiwgtb-Wc_B5SOAnQg8rOHXGhq97IqM9HA38Dtw0Yy5AtZDVGbwr7kyRaOW_k41IOY6rYntRJYc6vQJMJNdnVb_QhryFdXCqvRk9WUPYHG-hIc5vkFLHPhIfMgucncsewMciF9XLBzo-5IfwPmnK56nxItGNlZCLUJmYYYPEo7KQgXsX_xCvNDl_3zqf7fr8V0f1qW59O9kR-wtvxXnEYYdILP6URYILOy9_ZrEYll5gB_6SFW3MVY_fkkoFCeYa_exM2cC6FgSIBhkYKSxrR5oXgMDlFWJoTRhvZmDoZpFj2nnYRMOiFwJOXyXRkirY4K2AyMxj8Q_AaPhFNWZqjoBWchY9Vg3NCfmUqkuW5S-pNR4Apvs03RRjlTAnK79Sf8ve_cSruL6CePQ1wEyIWLzz8wS6zbGUe5wuDQ01KALbdbtYdNTtob7PIZdtdyuFqBldAet2wzM3qafs3uheWz_sH6-_-4LoI1wuq62yEeNZa2b-FbmXVEgo9Wy3g9kW1BfQrKGIIu8UPmj6sgvrb8i-1vREjIYPnUxgoapA4eRqsFZPI31Q_qOwdbgyA6DTOp5gJkJ-edliftT1lyNinVAJMxYdyqLUWpo2rTzi4MIHOCUv2tW8OE6KqyCBGosVXamqrf7WPWO9ufTgwR7QVEBYFlVrhTj8QusFTiBXejM7sKTqsKmXWRvpGxwOLn7ZxshZRUrxy7u_Mdg46wKOZ9Sx_zRIFDbjKZrQDU9_PG71c704tDZVDcavr6fvN8UV0Xe1vJ9FTQVwYSaAstqfPQj8sfkaQaQesjjnfCmV3M5dlzvKifSHSiPgm1Ejp8TPjnsd0Txfofzxq7tELQHrosrxC4wD7DxFUhuHJ2yiguD_1o3tvrqg=w2000-h1604">
+            </div>
+            <div class="card back-face">
+                <img src="https://lh3.googleusercontent.com/fife/AGXqzDkLMnNxAFWjPgYpeXlMhf-nmqnWVz09JtRBCVZ2UZ0sa1vlMYlmWluYyl60IxGT8WwfvPCzi8GMX89l4whU09OU-VAg_fpIYDiKZLvZseoLQUuZKYApuzrP_9A9aWEP6Y_o8JzMJmZcdbh-6N99pgNnC8YOq6YjikKpHeiGDU0Iz44e6_-NF3z-cWlGXLfDYvyV5dCizLrLjRxItOv9LXifvJRC3pAtMYZQVUYMEK0WVE9o7oBYAKKavhBOlxKeJQ_BMrd2LeSALnmok0O3DihKKC382hhdZtfW9KJj9iKRRBqCPNwdArEf6wPfU1BxDNHesrrr2IE9qU-7jxXn_yMBAe34TfJuiKGEg5ZDm5mEkY0vuDYkDj75NlMYnp6YT0SoFJnmw5ztcbuq3_Lo1Rjrc0deO1dwzQAStMRv66HI7CgypfQxXf9WbxEiU8ME_KNaUrkDZGf2vOZBzmfJ_w9tUCxTtTkDp9qC4gHwJAG6wW1lCXi4zs6U631kJlciv1Ti5acyEiEuyLjFqtBsAGhzj5N5AbKPLPniEvmmUxhxjwMafxZiEm5sDcQdGs5y6Gu16iWkxIM5e3JmLnhO1FBLFYoA2LtW1v2c_qhyGUZkuufYGLWbNbClxlLQ9SkKDxXABa7uzuTkZwur6XsSHkGLk8b-z5ZNDcHHzisRtGV2THLk4NTiphKKEoTmpsYYTjEkAr_0Aqq5WnnvNTdiibLQ5b8kJlDHcp_2LAP6G8Y-N_5bBOEMjexk9XzyjsYZ5BDvaxHebD16Uhamb1_pobaIQSy0PuDJ2owebszxn9wn-VENJSW0S2bmoguRyAehVZzrZHBzLg5wZ9qfucTPmhcQATpbR9g2ARg6ZXVj04oLD-7GbDmF-7UshgC24dU0ZnRse3qQuRpOH7x4Z-q74ZJJpuEut9a2WNMPiwgtb-Wc_B5SOAnQg8rOHXGhq97IqM9HA38Dtw0Yy5AtZDVGbwr7kyRaOW_k41IOY6rYntRJYc6vQJMJNdnVb_QhryFdXCqvRk9WUPYHG-hIc5vkFLHPhIfMgucncsewMciF9XLBzo-5IfwPmnK56nxItGNlZCLUJmYYYPEo7KQgXsX_xCvNDl_3zqf7fr8V0f1qW59O9kR-wtvxXnEYYdILP6URYILOy9_ZrEYll5gB_6SFW3MVY_fkkoFCeYa_exM2cC6FgSIBhkYKSxrR5oXgMDlFWJoTRhvZmDoZpFj2nnYRMOiFwJOXyXRkirY4K2AyMxj8Q_AaPhFNWZqjoBWchY9Vg3NCfmUqkuW5S-pNR4Apvs03RRjlTAnK79Sf8ve_cSruL6CePQ1wEyIWLzz8wS6zbGUe5wuDQ01KALbdbtYdNTtob7PIZdtdyuFqBldAet2wzM3qafs3uheWz_sH6-_-4LoI1wuq62yEeNZa2b-FbmXVEgo9Wy3g9kW1BfQrKGIIu8UPmj6sgvrb8i-1vREjIYPnUxgoapA4eRqsFZPI31Q_qOwdbgyA6DTOp5gJkJ-edliftT1lyNinVAJMxYdyqLUWpo2rTzi4MIHOCUv2tW8OE6KqyCBGosVXamqrf7WPWO9ufTgwR7QVEBYFlVrhTj8QusFTiBXejM7sKTqsKmXWRvpGxwOLn7ZxshZRUrxy7u_Mdg46wKOZ9Sx_zRIFDbjKZrQDU9_PG71c704tDZVDcavr6fvN8UV0Xe1vJ9FTQVwYSaAstqfPQj8sfkaQaQesjjnfCmV3M5dlzvKifSHSiPgm1Ejp8TPjnsd0Txfofzxq7tELQHrosrxC4wD7DxFUhuHJ2yiguD_1o3tvrqg=w2000-h1604">
+                <div class="info">
+                    <div class="title">
+                        Gokul P
+                    </div>
+                    <p>
+                        UI & UX Designer
+                    </p>
+                </div>
+                <ul>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/gokul_pilligundla/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </ul>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="card front-face">
+                <img src="https://lh3.googleusercontent.com/fife/AGXqzDlRmqupR391etxG8qd9QSPwS45fmLbDIA58G56lec9uojO7ytZV3rkFwx4_jhSYMByG16UV0HvGb1MfqCkDIcQI6a4czI8Ht_rPO5ZASWMRrJhtVojwGddzWtkJensBE9ni3pj2Y_M4Q_qh4ZMnhtvi8G9VYr8jg8tl5nK2urvvKJLsN7-QGxQ1Kn8BFJ4yxb622jeYzNcu6yIRHINmMbvUxNguGKwdfYjc38r2F07iSOhQWo3TqWv4c3MQTBZEmF2BC_wAXVB2iNZt931CMZbtCzyv_O3VUjEKdWvemk5mZ2iGhltcQLAbpVh3u38nzLaTz2qbzVXFy1ZCa-C_zr_NvAjHPA_NKM3LypjQqJ_ngWPjOFZSLCUcca-OBWoAhP-HRabxfozwOB_G6DUhlaZu1kxIpMs5D3qKVQDfgT83LgTGHGW3e4hOQRusxsgkUBQ8Z04P0TSBOEpIMc0fk9_mjG3FbzDzLnSwp-xseUP5B_Mu84QAiEkzUXRBT_5wgVaPRqdHDVbHa4vDxJiWb7y4tRyZI1zx4JgxdFo4ZtfEs2fyS3rmZVzcvMflL-steNIH5kGT_pZoXM6P7rkiepzg9oDlhoRdGts7v1egoXkssQIZ1XkU12cTkelgtHrCh5nEeRN_gL5FxIV7cb3mjudG7F993KBVcG88pyiSBXTT1LSOAAdzMZ2Rj742F6ED1ekQxQNsvJ2pNY9AN44V8KaZ9vtkSyqx9u5PqvMZFT2JTOndhmQO3XOIIDrCuxyrA2RkuaOZ5RZXStNTHmV2DtqOeMXCq0mbY39HpuZjGvoNgeoTcU45RhnuACnOUYO7-IY9Jm33Y_cwkDe-C_SlAL3IoPE6u6jNpJpy7F-aacHSdF65jHTkkL39bx7tp6lXju5fbfJHfMwPdp3apJnPwpWX6wf8p7U3uvkuSZlR6q5KBwf2UDavvsm4uVjcyBJBCjL744aGvPz21-be7qb7pGEqyIvpusWtEL_SwQvfrfkAC2wX6nuo7-Ftp_O4BVZbt9BaMnddrU-bhTtDGvgZtqA_ACZtpJ3dMLPeny_SFFTRK7Q4RTQd7YoKM3r0a4LCytkHANYewyXTgivoMwkoLKC5tloutBCKecmIuRXFm8seU2xKRl7kFdbPnmy9NU6ulydc_aECBG1tyVaITHmwbh76DkzMWmI41jfnZx2ggy3kYribXTMW8ymrdHbk73Yi2gqRsJEy54OHCGJAVPESK0bFOoZay4STUBvojp2uJAyZSG1rqB8_5T45as-ru_yIG6zzSsN-d8DCWFujL4uTO1JjcYggAuFx2o2vyqM5gmEA6pPZVDSRQcFVYiQC8VUJRbzgulhU2muisvNFhEgjMSccgGfnhlTXxCSOATtjDvrghGBt9S7ceOoolw-UNtFZQ5KQiOLcuiVrUJcXpsEvaSEbRjgs7KZmNjJCOdE72G87nhxJuGW2Zm0vYuvw4hRu7LZv1wVVTImLO8nhmpt4OAw_TCKkCr2-zor5vmHs80uHyrXozRhCs0ZyEQMYaYZk4UjwdJeO8_TS71iFgrmoBN2IlLrtIGuMERNDv317SEfI6w1bkLjvWSmqErd494v7H0a4e-Du-CM8ipVG5evVWcYnz9ojkYOOHJrjRC7OQ04yAT0VM2ToB8pwH7V5sM-Uc2PrY_0WAEMd8rlQPt7Ryls2RZ7zABzD52ExKiU_KWgbGRpiA4wPXSVB8cueZiMXJ1Evl2KQk8QIEpbsBXjl8wJY6GKRbWLz4r_cLquEy2X3xNqQsnO5ewapmIwkHIZfAhYdfztOu5DJZMZEV9yFs0k=w1919-h859">
+            </div>
+            <div class="card back-face">
+                <img src="https://lh3.googleusercontent.com/fife/AGXqzDlRmqupR391etxG8qd9QSPwS45fmLbDIA58G56lec9uojO7ytZV3rkFwx4_jhSYMByG16UV0HvGb1MfqCkDIcQI6a4czI8Ht_rPO5ZASWMRrJhtVojwGddzWtkJensBE9ni3pj2Y_M4Q_qh4ZMnhtvi8G9VYr8jg8tl5nK2urvvKJLsN7-QGxQ1Kn8BFJ4yxb622jeYzNcu6yIRHINmMbvUxNguGKwdfYjc38r2F07iSOhQWo3TqWv4c3MQTBZEmF2BC_wAXVB2iNZt931CMZbtCzyv_O3VUjEKdWvemk5mZ2iGhltcQLAbpVh3u38nzLaTz2qbzVXFy1ZCa-C_zr_NvAjHPA_NKM3LypjQqJ_ngWPjOFZSLCUcca-OBWoAhP-HRabxfozwOB_G6DUhlaZu1kxIpMs5D3qKVQDfgT83LgTGHGW3e4hOQRusxsgkUBQ8Z04P0TSBOEpIMc0fk9_mjG3FbzDzLnSwp-xseUP5B_Mu84QAiEkzUXRBT_5wgVaPRqdHDVbHa4vDxJiWb7y4tRyZI1zx4JgxdFo4ZtfEs2fyS3rmZVzcvMflL-steNIH5kGT_pZoXM6P7rkiepzg9oDlhoRdGts7v1egoXkssQIZ1XkU12cTkelgtHrCh5nEeRN_gL5FxIV7cb3mjudG7F993KBVcG88pyiSBXTT1LSOAAdzMZ2Rj742F6ED1ekQxQNsvJ2pNY9AN44V8KaZ9vtkSyqx9u5PqvMZFT2JTOndhmQO3XOIIDrCuxyrA2RkuaOZ5RZXStNTHmV2DtqOeMXCq0mbY39HpuZjGvoNgeoTcU45RhnuACnOUYO7-IY9Jm33Y_cwkDe-C_SlAL3IoPE6u6jNpJpy7F-aacHSdF65jHTkkL39bx7tp6lXju5fbfJHfMwPdp3apJnPwpWX6wf8p7U3uvkuSZlR6q5KBwf2UDavvsm4uVjcyBJBCjL744aGvPz21-be7qb7pGEqyIvpusWtEL_SwQvfrfkAC2wX6nuo7-Ftp_O4BVZbt9BaMnddrU-bhTtDGvgZtqA_ACZtpJ3dMLPeny_SFFTRK7Q4RTQd7YoKM3r0a4LCytkHANYewyXTgivoMwkoLKC5tloutBCKecmIuRXFm8seU2xKRl7kFdbPnmy9NU6ulydc_aECBG1tyVaITHmwbh76DkzMWmI41jfnZx2ggy3kYribXTMW8ymrdHbk73Yi2gqRsJEy54OHCGJAVPESK0bFOoZay4STUBvojp2uJAyZSG1rqB8_5T45as-ru_yIG6zzSsN-d8DCWFujL4uTO1JjcYggAuFx2o2vyqM5gmEA6pPZVDSRQcFVYiQC8VUJRbzgulhU2muisvNFhEgjMSccgGfnhlTXxCSOATtjDvrghGBt9S7ceOoolw-UNtFZQ5KQiOLcuiVrUJcXpsEvaSEbRjgs7KZmNjJCOdE72G87nhxJuGW2Zm0vYuvw4hRu7LZv1wVVTImLO8nhmpt4OAw_TCKkCr2-zor5vmHs80uHyrXozRhCs0ZyEQMYaYZk4UjwdJeO8_TS71iFgrmoBN2IlLrtIGuMERNDv317SEfI6w1bkLjvWSmqErd494v7H0a4e-Du-CM8ipVG5evVWcYnz9ojkYOOHJrjRC7OQ04yAT0VM2ToB8pwH7V5sM-Uc2PrY_0WAEMd8rlQPt7Ryls2RZ7zABzD52ExKiU_KWgbGRpiA4wPXSVB8cueZiMXJ1Evl2KQk8QIEpbsBXjl8wJY6GKRbWLz4r_cLquEy2X3xNqQsnO5ewapmIwkHIZfAhYdfztOu5DJZMZEV9yFs0k=w1919-h859">
+                <div class="info">
+                    <div class="title">
+                        Vijay Guttula
+                    </div>
+                    <p>
+                        Front-end developer
+                    </p>
+                </div>
+                <ul>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/its_vj_2210/"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br>
+<div class="card-title">
+    <h2>Founders of Curecraft</h2>
+</div>
+<br>
+<br>
+<div class="email-header">
+    <h2>Emails - </h2>
+</div>
+<div class="emails-body">
+    <h3>Vamshi Krishna (Team Lead) - ryagallavamshikrishnasai@gmail.com</h3>
+
+</div>
+<div class="emails-body">
+    <h3>Gokul P (UI & UX) - gikki511@gmail.com</h3>
+</div>
+<div class="emails-body">
+    <h3>Vijay Guttula (Front-end) - vijayguttula001@gmail.com</h3>
+</div>
+<br>
+<br>
+    <footer class="c-footer">
+        <div class="footer-left">
+            <h3>Connect with Us</h3>
+            <!-- Add social media icons/links here -->
+            <a href="https://www.instagram.com/curecraft_ts/" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195393851251241100/icons8-facebook-96.png?ex=65b3d447&is=65a15f47&hm=82cdb082d07c7a9af8a97f46d5ec6d735e734660c156edcdb97ea0644e796b3f&' alt="Facebook Icon" class="social-icon">
+                Facebook
+            </a>
+            <br>
+            <a href="https://www.instagram.com/curecraft_ts/" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195395290526666762/icons8-instagram-96.png?ex=65b3d59e&is=65a1609e&hm=ef5337e5f7533123eed2d04b9968add557672e366bdf8d76e2486279fe31a111&' alt="Facebook Icon" class="social-icon">
+                Instagram
+            </a>
+            <br>
+            <a href="https://www.youtube.com/@Cure_Craft" target="_blank">
+                <img src='https://cdn.discordapp.com/attachments/1143051446489731154/1195395145961590784/icons8-youtube-96.png?ex=65b3d57c&is=65a1607c&hm=1962a969c1426c70edeab88ef8d9a3f1154bc0f4b64099cbcab7876ba843ab57&' alt="Facebook Icon" class="social-icon">
+                YouTube
+            </a>
+        </div>
+        <div class="footer-right">
+            <h3>Contact Information</h3>
+            <!-- Add contact information here -->
+            <p>Email: help.curecraft@gmail.com</p>
+            <br>
+            <p>Phone: +91 76010 69687, +91 81215 82817</p>
+        </div>
+    </footer>
+</body>
+</html>
